@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #111111;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+}
+
+.container i {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #ffffff;
+  transition: 0.5s;
+}
+
+.container i:nth-child(1) {
+  border-radius: 34% 66% 66% 34% / 43% 50% 50% 57%;
+  animation: animate 6s linear infinite;
+}
+
+.container i:nth-child(2) {
+  border-radius: 22% 78% 32% 68% / 62% 39% 61% 38%;
+  animation: animate2 8s linear infinite;
+}
+
+.container i:nth-child(3) {
+  border-radius: 22% 78% 75% 25% / 62% 39% 61% 38%;
+  animation: animate 10s reverse infinite;
+}
+
+.container:hover i {
+  border: 2px solid var(--clr);
+  filter: drop-shadow(0 0 20px var(--clr));
+}
+
+.container .login {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 100%;
+}
+
+.container h2 {
+  font-size: 2em;
+  color: #ffffff;
+}
+
+.container .inputBx {
+  position: relative;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.container input {
+  position: relative;
+  border: 2px solid #ffffff;
+  border-radius: 40px;
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1.2em;
+  color: #ffffff;
+  box-shadow: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.container input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.container input[type='submit'] {
+  border: none;
+  background-image: linear-gradient(45deg, #ff357a, #fff172);
+  cursor: pointer;
+}
+
+.container .links {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.container .links a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

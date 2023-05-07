@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #222327;
+}
+
+.nav {
+  position: relative;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  width: 450px;
+  height: 80px;
+  background: #2f2f2f;
+}
+
+.nav ul {
+  position: relative;
+  display: flex;
+  width: 400px;
+}
+
+.nav ul li {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  list-style: none;
+}
+
+.nav ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav ul li a .icon {
+  position: relative;
+  display: block;
+  font-size: 1.5em;
+  line-height: 85px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+}
+
+.nav ul li a:hover .icon {
+  color: rgba(255, 255, 255, 1);
+}
+
+.nav ul li.active a .icon {
+  color: #29fd53;
+  transform: translateY(-8px);
+}
+
+.nav ul li a .text {
+  position: absolute;
+  font-size: 0.6em;
+  font-weight: 600;
+  color: #222327;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transform: translateY(0px);
+  opacity: 0;
+  z-index: 10;
+}
+
+.nav ul li.active a .text {
+  opacity: 1;
+  transform: translateY(16px);
+}
+
+#indicator {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#indicator::before {
+  content: '';
+  position: absolute;
+  bottom: 14px;
+  border-radius: 10px;
+  width: 80%;
+  height: 16px;
+  background: #29fd53;
+}
+
+.nav ul li:nth-child(2).active ~ #indicator {
+  transform: translateX(calc(80px * 1));
+}
+
+.nav ul li:nth-child(3).active ~ #indicator {
+  transform: translateX(calc(80px * 2));
+}
+
+.nav ul li:nth-child(4).active ~ #indicator {
+  transform: translateX(calc(80px * 3));
+}
+
+.nav ul li:nth-child(5).active ~ #indicator {
+  transform: translateX(calc(80px * 4));
+}
